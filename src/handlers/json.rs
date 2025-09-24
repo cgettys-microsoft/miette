@@ -175,8 +175,12 @@ impl ReportHandler for JSONReportHandler {
     }
 }
 
-#[test]
-fn test_escape() {
-    assert_eq!(escape("a\nb").to_string(), r"a\nb");
-    assert_eq!(escape("C:\\Miette").to_string(), r"C:\\Miette");
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_escape() {
+        assert_eq!(escape("a\nb").to_string(), r"a\nb");
+        assert_eq!(escape("C:\\Miette").to_string(), r"C:\\Miette");
+    }
 }
