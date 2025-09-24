@@ -517,6 +517,12 @@ impl<'a> MietteSpanContents<'a> {
         self.language = Some(language.into());
         self
     }
+
+    /// Sets the [`name`](SpanContents::name) where the span comes from.
+    pub fn with_name(mut self, name: impl Into<String>) -> Self {
+        self.name = Some(name.into());
+        self
+    }
 }
 
 impl<'a> SpanContents<'a> for MietteSpanContents<'a> {
