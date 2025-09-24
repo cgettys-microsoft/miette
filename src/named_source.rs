@@ -1,8 +1,9 @@
 use crate::{MietteError, MietteSpanContents, SourceCode, SpanContents};
 
 /// Utility struct for when you have a regular [`SourceCode`] type that doesn't
-/// implement `name`. For example [`String`]. Or if you want to override the
-/// `name` returned by the `SourceCode`.
+/// implement `name`, such as [`String`].
+///
+///  Or if you want to override the `name` that [`Self::read_span()`] returns via [`SpanContents::name()`] .
 #[derive(Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct NamedSource<S: SourceCode + 'static> {
     source: S,

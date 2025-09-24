@@ -233,6 +233,8 @@ types, file handles, and even network streams.
 If you can read it, you can source it, and it's not necessary to read the
 whole thing--meaning you should be able to support `SourceCode`s which are
 gigabytes or larger in size.
+
+All information about the span is provided via the returned [`SpanContents`], including optionally a file (or other) name and source language.
 */
 pub trait SourceCode: Send + Sync {
     /// Read the bytes for a specific span from this `SourceCode`, keeping a
