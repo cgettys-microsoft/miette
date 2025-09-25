@@ -16,8 +16,8 @@ impl<S: SourceCode> std::fmt::Debug for NamedSource<S> {
         f.debug_struct("NamedSource")
             .field("name", &self.name)
             .field("source", &"<redacted>")
-            .field("language", &self.language);
-        Ok(())
+            .field("language", &self.language)
+            .finish()
     }
 }
 
